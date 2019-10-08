@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:39:14 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 17:53:01 by abourin          ###   ########.fr       */
+/*   Created: 2019/10/08 18:26:52 by abourin           #+#    #+#             */
+/*   Updated: 2019/10/08 18:28:56 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *src)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	size_t	len;
-
-	len = 0;
-	while (src[len])
-	{
-		len++;
-	}
-	return (len);
-}
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < dstsize && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (dstsize > ft_strlen(src))
-		dst[ft_strlen(src)] = '\0';
-	else
-		dst[dstsize- 1] = '\0';
-	return (ft_strlen(src));
+	new->next = *alst;
+	*alst = new;
 }

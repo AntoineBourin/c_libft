@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:39:14 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 17:53:01 by abourin          ###   ########.fr       */
+/*   Created: 2019/10/08 17:41:48 by abourin           #+#    #+#             */
+/*   Updated: 2019/10/08 18:07:54 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *src)
+t_list	*ft_lstnew(void const *content)
 {
-	size_t	len;
+	t_list	*result;
 
-	len = 0;
-	while (src[len])
-	{
-		len++;
-	}
-	return (len);
-}
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < dstsize && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (dstsize > ft_strlen(src))
-		dst[ft_strlen(src)] = '\0';
-	else
-		dst[dstsize- 1] = '\0';
-	return (ft_strlen(src));
+	if (!(result = malloc(1 * sizeof(t_list))))
+		return (NULL);
+	result->content = (void *)content;
+	return (result);
 }
