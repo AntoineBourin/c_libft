@@ -6,11 +6,11 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:57:15 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 12:43:10 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:11:56 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		ft_is_found(const char *haystack, size_t i,
 					const char *needle, size_t len)

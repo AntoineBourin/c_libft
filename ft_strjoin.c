@@ -6,26 +6,16 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:37:31 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 12:38:30 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:27:27 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		ft_strlen(char const *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
-	int		len;
+	size_t	len;
 	int		i;
 	int		j;
 

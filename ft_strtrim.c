@@ -6,11 +6,11 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:49:38 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 12:50:14 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:19:39 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		ft_get_start_trimmed(char const *s1, char const *set)
 {
@@ -36,7 +36,7 @@ int		ft_get_start_trimmed(char const *s1, char const *set)
 	return (i - 1);
 }
 
-int		ft_get_end_trimmed(char const *s1, char const *set, int len)
+int		ft_get_end_trimmed(char const *s1, char const *set, size_t len)
 {
 	int		i;
 	int		j;
@@ -58,16 +58,6 @@ int		ft_get_end_trimmed(char const *s1, char const *set, int len)
 		i--;
 	}
 	return (i + 1);
-}
-
-int		ft_strlen(char const *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

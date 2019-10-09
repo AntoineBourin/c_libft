@@ -6,27 +6,17 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:48:28 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 15:27:52 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:24:11 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
-	char	*s2;
-	int		size;
-	int		i;
+	char		*s2;
+	size_t		size;
+	int			i;
 
 	i = 0;
 	size = ft_strlen(s1);

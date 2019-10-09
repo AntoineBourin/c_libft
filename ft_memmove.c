@@ -6,23 +6,11 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:38:34 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 12:33:39 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:23:01 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		ft_strlen(const void *src)
-{
-	int			len;
-	const char	*csrc;
-
-	csrc = src;
-	len = 0;
-	while (csrc[len])
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

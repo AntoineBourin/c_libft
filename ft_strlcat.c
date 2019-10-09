@@ -6,21 +6,11 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:45:05 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 16:17:20 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:27:56 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(char *src)
-{
-	size_t	i;
-
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

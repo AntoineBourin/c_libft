@@ -6,11 +6,11 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:11 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 14:07:48 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 14:37:18 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -21,7 +21,8 @@ void	*ft_calloc(size_t count, size_t size)
 	result = malloc(count * size);
 	while (i < count)
 	{
-		*(result + (i * size)) = 0;
+		*(result + i) = 0;
+		i++;
 	}
 	return (result);
 }

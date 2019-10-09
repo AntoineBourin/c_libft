@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:57:47 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 10:57:50 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 14:29:38 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_lstadd_back(t_list **alstm, t_list *new)
 {
-	while (*alstm)
-	{
-		if (!((*alstm)->next))
-			(*alstm)->next = new;
-	}
+	t_list	*tmp;
+	
+	tmp = *alstm;
+	while (tmp && tmp->next != 0)
+		tmp = tmp->next;
+	tmp->next = new;
 }

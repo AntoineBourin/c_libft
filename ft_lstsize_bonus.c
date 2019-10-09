@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:30:41 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 18:32:24 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:51:35 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ int		ft_lstsize(t_list *lst)
 	t_list	*tmp;
 
 	i = 0;
-	tmp = lst;
-	while (tmp)
+	while (lst)
 	{
-		tmp = tmp->next;
+		lst = lst->next;
 		i++;
 	}
 	return (i);

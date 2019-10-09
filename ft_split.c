@@ -6,11 +6,11 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 08:58:16 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 12:47:58 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:21:26 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		get_words_count(char const *s, char c)
 {
@@ -47,7 +47,7 @@ int		ft_fill_result_index(char *result, char const *s,
 	return (1);
 }
 
-int		ft_fill_result(char **result, char const *s, char c)
+int		ft_fill_split(char **result, char const *s, char c)
 {
 	int		beg_ind;
 	int		i;
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 	words = get_words_count(s, c);
 	if (!(result = malloc((words + 1) * sizeof(char *))))
 		return (NULL);
-	if (!ft_fill_result(result, s, c))
+	if (!ft_fill_split(result, s, c))
 		return (NULL);
 	result[words] = NULL;
 	return (result);
