@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:11 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 14:37:18 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 14:52:32 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int			*result;
+	void		*result;
 	size_t		i;
 
 	i = 0;
-	result = malloc(count * size);
-	while (i < count)
-	{
-		*(result + i) = 0;
-		i++;
-	}
+	if (!(result = malloc(count * size)))
+		return (NULL);
+	ft_bzero(result, count * size);
 	return (result);
 }

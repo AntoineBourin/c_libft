@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:32:13 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 14:45:09 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 14:53:23 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	result[i] = '\0';
 	return (result);
-}
-
-int		main(void)
-{
-	char	test[] = "Hello";
-
-	printf("%s\n", ft_substr(test, 4, 12));
 }
