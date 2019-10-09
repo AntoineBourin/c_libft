@@ -6,13 +6,13 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:39:14 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 17:53:01 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 12:38:19 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t ft_strlen(const char *src)
+size_t		ft_strlen(const char *src)
 {
 	size_t	len;
 
@@ -24,7 +24,7 @@ size_t ft_strlen(const char *src)
 	return (len);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
@@ -37,6 +37,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	if (dstsize > ft_strlen(src))
 		dst[ft_strlen(src)] = '\0';
 	else
-		dst[dstsize- 1] = '\0';
+		dst[dstsize - 1] = '\0';
 	return (ft_strlen(src));
 }

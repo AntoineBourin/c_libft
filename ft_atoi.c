@@ -6,13 +6,14 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:46:40 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 16:45:03 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 12:27:21 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_space(char c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' || c == ' ')
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
 		return (1);
 	return (0);
 }
@@ -34,10 +35,10 @@ int	ft_atoi(const char *str)
 			is_minus = 1;
 		i++;
 	}
-	while((str[i] >= 48 && str[i] <= 57))
+	while ((str[i] >= 48 && str[i] <= 57))
 	{
 		result *= 10;
-		result += str[i] - 48; 
+		result += str[i] - 48;
 		i++;
 	}
 	return (is_minus ? result * -1 : result);

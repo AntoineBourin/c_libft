@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:49:38 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 17:07:16 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 12:50:14 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,28 @@ int		ft_get_start_trimmed(char const *s1, char const *set)
 	return (i - 1);
 }
 
-int     ft_get_end_trimmed(char const *s1, char const *set, int len)
+int		ft_get_end_trimmed(char const *s1, char const *set, int len)
 {
-    int i;
-    int j;
-    int must_stop;
+	int		i;
+	int		j;
+	int		must_stop;
 
-    i = len - 1;
-    j = 0;
-    must_stop = 0;
-    while (!must_stop && s1[i])
-    {
+	i = len - 1;
+	j = 0;
+	must_stop = 0;
+	while (!must_stop && s1[i])
+	{
 		j = 0;
-        must_stop = 1;
-        while (set[j])
-        {
-            if (s1[i] == set[j])
-                must_stop = 0;
-            j++;
-        }
-        i--;
-    }
-    return (i + 1);
+		must_stop = 1;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				must_stop = 0;
+			j++;
+		}
+		i--;
+	}
+	return (i + 1);
 }
 
 int		ft_strlen(char const *src)

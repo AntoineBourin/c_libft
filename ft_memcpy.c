@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:02:53 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/07 16:27:17 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 12:31:13 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		result[i] = source[i];
 		i++;
 	}
-	
-	return dst;
+	return (dst);
 }

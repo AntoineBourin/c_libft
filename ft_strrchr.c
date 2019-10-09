@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:07:49 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/08 14:11:40 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 12:43:38 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	last_index = -1;
-
 	while (s[i])
 	{
 		if (c == s[i])

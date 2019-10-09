@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:28:20 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/07 16:53:29 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/09 12:28:05 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	d;
 	char			*result;
 	const char		*source;
-	
+
 	source = src;
 	result = dst;
 	i = 0;
