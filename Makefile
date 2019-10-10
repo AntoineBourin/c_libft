@@ -6,7 +6,7 @@
 #    By: abourin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 13:55:47 by abourin           #+#    #+#              #
-#    Updated: 2019/10/09 12:25:54 by abourin          ###   ########.fr        #
+#    Updated: 2019/10/10 18:36:16 by abourin          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,8 @@ OBJSBONUS = ${SRCSBONUS:.c=.o}
 
 NAME = libft.a
 
+NAMEBONUS = libft_bonus.a
+
 RM = rm -f
 
 CC = GCC
@@ -29,7 +31,7 @@ CFLAGS = -Wall -Wextra -Werror
 %.c: %.o
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			ar rc ${NAME} ${OBJS}
 
 bonus: ${OBJSBONUS} ${OBJS}
@@ -42,6 +44,7 @@ clean:
 
 fclean: clean
 		${RM} ${NAME}
+		${RM} ${NAMEBONUS}
 
 re:		fclean all
 

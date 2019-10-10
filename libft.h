@@ -6,7 +6,7 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:23:00 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 13:35:33 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/10 09:07:50 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -22,6 +23,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_itoa(int n);
 char				**ft_split(char const *s, char c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -38,8 +40,6 @@ void				*ft_calloc(size_t count, size_t size);
 int					ft_isalnum(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
-void				ft_fill_result(char *result, int nb,
-							int is_minus, int char_nb);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);

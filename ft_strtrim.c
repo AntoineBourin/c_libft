@@ -6,13 +6,13 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:49:38 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 13:19:39 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/10 18:17:25 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_get_start_trimmed(char const *s1, char const *set)
+static int		ft_get_start_trimmed(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -36,7 +36,7 @@ int		ft_get_start_trimmed(char const *s1, char const *set)
 	return (i - 1);
 }
 
-int		ft_get_end_trimmed(char const *s1, char const *set, size_t len)
+static int		ft_get_end_trimmed(char const *s1, char const *set, size_t len)
 {
 	int		i;
 	int		j;
@@ -60,7 +60,7 @@ int		ft_get_end_trimmed(char const *s1, char const *set, size_t len)
 	return (i + 1);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	int		beg_ind;
 	int		end_ind;
@@ -70,7 +70,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	beg_ind = ft_get_start_trimmed(s1, set);
 	end_ind = ft_get_end_trimmed(s1, set, ft_strlen(s1));
-	if (!(result = malloc((end_ind - beg_ind) * sizeof(char))))
+	if (beg_ind > end_ind)
+		beg_ind = end_ind + 1;
+	if (!(result = malloc((end_ind - beg_ind + 1) * sizeof(char))))
 		return (NULL);
 	while (beg_ind <= end_ind)
 	{
@@ -78,5 +80,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		beg_ind++;
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }

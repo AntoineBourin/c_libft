@@ -6,13 +6,13 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:57:15 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 13:11:56 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/10 09:15:22 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_is_found(const char *haystack, size_t i,
+static int		ft_is_found(const char *haystack, size_t i,
 					const char *needle, size_t len)
 {
 	int	needle_index;
@@ -28,7 +28,8 @@ int		ft_is_found(const char *haystack, size_t i,
 	return (1);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char			*ft_strnstr(const char *haystack,
+					const char *needle, size_t len)
 {
 	size_t	i;
 	int		is_found;

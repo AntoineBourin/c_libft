@@ -5,85 +5,97 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 08:58:16 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 13:21:26 by abourin          ###   ########.fr       */
+/*   Created: 2019/07/16 16:13:30 by abourin           #+#    #+#             */
+/*   Updated: 2019/10/10 09:06:59 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_words_count(char const *s, char c)
+int		ft_c_in_cs(char c, char cs)
 {
-	int	i;
-	int	words;
-
-	words = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c && s[i - 1] && s[i - 1] != c)
-			words++;
-		i++;
-	}
-	return (words);
+	if (c == cs)
+		return (1);
+	return (0);
 }
 
-int		ft_fill_result_index(char *result, char const *s,
-							int *beg_ind, int limit)
+char	*ft_end_str(char *str, char c)
 {
 	int	i;
 
 	i = 0;
-	if (!(result = malloc((limit - *beg_ind + 1) * sizeof(char))))
-		return (0);
-	while ((*beg_ind) < limit)
+	while (str[i])
 	{
-		result[i] = s[(*beg_ind)];
+		if (str[i] == c)
+			return (&str[i]);
 		i++;
-		(*beg_ind)++;
 	}
-	(*beg_ind)++;
-	result[i] = '\0';
-	return (1);
+	return (&str[i]);
 }
 
-int		ft_fill_split(char **result, char const *s, char c)
+char	*ft_copy(char *str, char c)
 {
-	int		beg_ind;
 	int		i;
-	int		w_ind;
+	char	*res;
+	char	*clone_str;
 
-	w_ind = 0;
 	i = 0;
-	beg_ind = 0;
-	while (s[i])
+	clone_str = ft_end_str(str, c);
+	if (clone_str == str)
+		return (0);
+	res = malloc(clone_str - str + 1);
+	if (res == 0)
+		return (0);
+	while (i < clone_str - str)
 	{
-		if (s[i] == c && (!s[i - 1] || s[i - 1] == c))
-			beg_ind++;
-		else if (s[i] == c)
-		{
-			if (!ft_fill_result_index(result[w_ind], s, &beg_ind, i))
-				return (0);
-			w_ind++;
-		}
+		res[i] = str[i];
 		i++;
 	}
-	if (i != beg_ind && s[i - 1] != c)
-		if (!ft_fill_result_index(result[w_ind], s, &beg_ind, i))
-			return (0);
-	return (1);
+	res[i] = 0;
+	return (res);
+}
+
+int		ft_malloc_size(char const *str, char c)
+{
+	int		i;
+	int		count;
+
+	i = 0;
+	if (ft_c_in_cs(str[0], c))
+		count = 0;
+	else
+		count = 1;
+	while (str[i + 1])
+	{
+		if (ft_c_in_cs(str[i], c) && !ft_c_in_cs(str[i + 1], c))
+			count++;
+		i++;
+	}
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		words;
-	char	**result;
+	char	**res;
+	int		size;
+	int		i;
+	char	*clone_str;
 
-	words = get_words_count(s, c);
-	if (!(result = malloc((words + 1) * sizeof(char *))))
-		return (NULL);
-	if (!ft_fill_split(result, s, c))
-		return (NULL);
-	result[words] = NULL;
-	return (result);
+	clone_str = (char *)s;
+	i = 0;
+	size = ft_malloc_size(s, c);
+	res = malloc((size + 1) * sizeof(char *));
+	while (i < size)
+	{
+		if (ft_copy(clone_str, c))
+		{
+			res[i] = ft_copy(clone_str, c);
+			clone_str = ft_end_str(clone_str, c);
+			i++;
+		}
+		while (ft_c_in_cs(*clone_str, c))
+			clone_str++;
+	}
+	res[i] = 0;
+	return (res);
 }

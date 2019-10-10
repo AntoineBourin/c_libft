@@ -6,39 +6,42 @@
 /*   By: abourin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:34:59 by abourin           #+#    #+#             */
-/*   Updated: 2019/10/09 13:14:43 by abourin          ###   ########.fr       */
+/*   Updated: 2019/10/10 09:21:31 by abourin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_fill_result(char *result, int nb, int is_minus, int char_nb)
+static void		ft_fill_result(char *result, int nb, int is_minus, int char_nb)
 {
+	long long int		n;
+
+	n = nb;
 	if (is_minus)
 	{
 		result[0] = '-';
-		nb = nb * -1;
+		n = n * -1;
 	}
 	result[char_nb + 1] = '\0';
-	while (nb > 10)
+	while (n >= 10)
 	{
-		result[char_nb] = (nb % 10) + 48;
-		nb = nb / 10;
+		result[char_nb] = (n % 10) + 48;
+		n = n / 10;
 		char_nb--;
 	}
-	result[char_nb] = (nb % 10) + 48;
+	result[char_nb] = (n % 10) + 48;
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	int		char_nb;
-	int		nb;
-	int		is_minus;
-	char	*result;
+	int				char_nb;
+	long long int	nb;
+	int				is_minus;
+	char			*result;
 
 	char_nb = 0;
 	nb = n;
-	if (n < 0)
+	if (nb < 0)
 	{
 		is_minus = 1;
 		char_nb++;
@@ -46,7 +49,7 @@ char	*ft_itoa(int n)
 	}
 	else
 		is_minus = 0;
-	while (nb > 10)
+	while (nb >= 10)
 	{
 		nb = nb / 10;
 		char_nb++;
